@@ -1,0 +1,181 @@
+body {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e0e0e0;
+}
+
+.container {
+    background: rgba(30, 30, 46, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.login-card {
+    background: rgba(18, 18, 34, 0.95);
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    padding: 36px;
+    backdrop-filter: blur(12px);
+    animation: dropIn 0.9s ease-out both;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes dropIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(45, 45, 58, 0.9);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+button, .btn {
+    border-radius: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+}
+
+button:hover, .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.form-control {
+    border-radius: 10px;
+    border: 2px solid #404040;
+    background: rgba(45, 45, 58, 0.8);
+    color: #ffffff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    background: rgba(45, 45, 58, 0.9);
+    color: #ffffff;
+}
+
+.form-control::placeholder {
+    color: #a0a0a0;
+}
+
+h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.form-label {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.card-title {
+    color: #ffffff;
+}
+
+.card-text {
+    color: #e0e0e0;
+}
+
+.text-muted {
+    color: #a0a0a0 !important;
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+#output {
+    background: rgba(30, 30, 46, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border: none;
+}
+
+.btn-success {
+    background: linear-gradient(45deg, #2ecc71, #27ae60);
+    border: none;
+}
+
+.btn-warning {
+    background: linear-gradient(45deg, #f39c12, #e67e22);
+    border: none;
+}
+
+.btn-info {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    border: none;
+}
+
+.btn-danger {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    border: none;
+}
+
+.btn.active,
+.btn.active:focus,
+.btn.active:hover {
+    box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.35);
+}
+
+.dashboard-card {
+    min-height: 180px;
+}
+
+@media (max-width: 768px) {
+    .dashboard-card {
+        min-height: auto;
+    }
+    .card-icon {
+        font-size: 2rem;
+    }
+}
+
+a {
+    color: #667eea;
+}
+
+a:hover {
+    color: #764ba2;
+}

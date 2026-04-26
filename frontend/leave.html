@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leave Request</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container mt-4">
+
+<h3 class="text-center">Leave Application</h3>
+
+<input id="from" type="date" class="form-control mt-3" required>
+<input id="to" type="date" class="form-control mt-3" required>
+
+<input id="file" type="file" class="form-control mt-3" required>
+
+<button onclick="sendLeave()" class="btn btn-danger mt-3 w-100">Submit</button>
+
+</div>
+
+<script>
+const user = JSON.parse(localStorage.getItem("user"));
+
+async function sendLeave(){
+    const fromDate = document.getElementById("from").value;
+    const toDate = document.getElementById("to").value;
+
+    if(!fromDate || !toDate){
+        alert("Please select both from and to dates.");
+        return;
+    }
+
+    if(new Date(fromDate) > new Date(toDate)){
+        alert("From date cannot be after to date.");
+        return;
+    }
+
+    const body = {
+        studentId: user.wardId || user.studentId || "",
+        studentName: user.wardName || user.name || "Unknown Student",
+        parentName: user.name || "Parent",
+        room: user.room || 0, // optional (can improve later)
+        hostelName: user.hostelName || "",
+        fromDate: fromDate,
+        toDate: toDate
+    };
+
+    await fetch("http://localhost:5000/api/leave/request",{
+        method:"POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify(body)
+    });
+
+    alert("Leave Requested ✅");
+}
+</script>
+
+</body>
+</html>

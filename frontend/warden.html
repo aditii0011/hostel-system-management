@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Warden Dashboard - Hostel Management</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.sidebar {
+    background: rgba(18, 18, 34, 0.95);
+    min-height: 100vh;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+.sidebar .nav-link {
+    color: #e0e0e0;
+    padding: 12px 20px;
+    margin: 5px 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+.sidebar .nav-link:hover, .sidebar .nav-link.active {
+    background: rgba(102, 126, 234, 0.2);
+    color: #ffffff;
+}
+.main-content {
+    padding: 30px;
+}
+.dashboard-card {
+    background: rgba(45, 45, 58, 0.9);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #667eea;
+}
+.stats-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+#qr {
+    max-width: 100%;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+</style>
+</head>
+
+<body>
+<div class="container-fluid">
+<div class="row">
+    <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+        <div class="position-sticky pt-3">
+            <h5 class="text-center text-white mb-4 mt-3">
+                <i class="bi bi-person-badge me-2"></i>Warden Panel
+            </h5>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" onclick="showDashboard(event)">
+                        <i class="bi bi-house-door me-2"></i>Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showStudents(event)">
+                        <i class="bi bi-people me-2"></i>Students
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showHostelChangeRequests(event)">
+                        <i class="bi bi-arrow-repeat me-2"></i>Hostel Change Requests
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showRoom(event)">
+                        <i class="bi bi-door-open me-2"></i>Room View
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showAttendance(event)">
+                        <i class="bi bi-calendar-check me-2"></i>Attendance
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showLeaves(event)">
+                        <i class="bi bi-envelope-check me-2"></i>Leaves
+                    </a>
+                </li>
+                <li class="nav-item mt-3">
+                    <a class="nav-link text-danger" href="#" onclick="logout()">
+                        <i class="bi bi-box-arrow-right me-2"></i>Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
+    </main>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/logout.js"></script>
+<script src="js/warden.js"></script>
+</body>
+</html>
